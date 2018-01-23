@@ -93,7 +93,6 @@ module.exports = function (message) {
 		console.log('message', message);
 	}
 
-	console.log("a.komarov");
 	console.log(`Welcome ${message}`);
 };
 
