@@ -1,4 +1,3 @@
-var home =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -66,35 +65,54 @@ var home =
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "welcome", function() { return welcome; });
-
-
-let welcome = __webpack_require__(1);
-
-welcome('home');
-
-
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = function (message) {
+var _interopRequireDefault = __webpack_require__(1);
 
-	if (false){
-		console.log('message', message);
-	}
+var _menu = _interopRequireDefault(__webpack_require__(2));
 
-	console.log(`Welcome ${message}`);
-};
+var menu = (0, _menu.default)(['Главная', 'Обо мне', 'Портфолио'], 'menu');
+document.body.appendChild(menu);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+module.exports = _interopRequireDefault;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(array, className) {
+  var menu = document.createElement('ul');
+  menu.className = className;
+  var listItems = '';
+  array.forEach(function (item) {
+    listItems += '<li>' + item + '</li>';
+  });
+  menu.innerHTML = listItems;
+  return menu;
+}
+
+;
 
 /***/ })
 /******/ ]);

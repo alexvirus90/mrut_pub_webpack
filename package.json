@@ -1,0 +1,39 @@
+{
+  "name": "mrut_pub_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
+    "@babel/runtime": "^7.0.0-beta.38",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "dev": "webpack",
+    "prod": "set NODE_ENV=production && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexvirus90/mrut_pub_webpack.git"
+  },
+  "keywords": [
+    "webpack",
+    "map"
+  ],
+  "author": "Komarov Alexander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexvirus90/mrut_pub_webpack/issues"
+  },
+  "homepage": "https://github.com/alexvirus90/mrut_pub_webpack#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.38",
+    "html-webpack-plugin": "^2.30.1",
+    "uglifyjs-webpack-plugin": "^1.1.6"
+  }
+}

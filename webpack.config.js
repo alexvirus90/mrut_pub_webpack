@@ -1,26 +1,49 @@
 'use strict';
 
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const PATHS = {
+	frontend: path.join(__dirname, 'frontend'),
+	public: 	path.join(__dirname, 'public')
+};
 
 module.exports = {
-	entry: "./frontend/js/home.js",
+	entry: PATHS.frontend + '/js/index.js',
 	output: {
-		filename: "./public/build.js",
-		library: 'home'
+		path: PATHS.public,
+		filename: "[name].js"
 	},
-
-	watch: NODE_ENV == 'development',
-
-	watchOptions: {
-		aggregateTimeout: 100
-	},
-
-	devtool: NODE_ENV == 'development' ? 'cheap-inline-module-source-map' : false,
 
 	plugins: [
-		new webpack.DefinePlugin({
-			NODE_ENV: JSON.stringify(NODE_ENV)
+		new HtmlWebpackPlugin({
+			title: 'Webpack APP'
 		})
-	]
+	],
+
+	resolve: {
+		modules: ["node_modules"],
+		extensions: ["*", ".js"]
+	},
+
+	resolveLoader: {
+		modules: ["node_modules"],
+		moduleExtensions: ['-loader'],
+		extensions: ["*", ".js"]
+	},
+
+	module: {
+		rules: [{
+				test: /\.js$/,
+				exclude: /(node_modules|bower_components)/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env'],
+						plugins: ['@babel/transform-runtime']
+					}
+				}
+			}
+		]
+	}
 };
