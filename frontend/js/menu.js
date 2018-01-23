@@ -1,3 +1,5 @@
+import '../sass/menu.sass';
+
 export default function (array, className) {
 	let menu = document.createElement('ul');
 	menu.className = className;
