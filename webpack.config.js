@@ -1,53 +1,74 @@
 'use strict';
 
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
+const extractCSS = require('./webpack/css.extract');
+// const uglifyJS = require('./webpack/js.uglify');
+// const images = require('./webpack/images');
 
 const PATHS = {
-	frontend: path.join(__dirname, 'frontend'),
-	public: 	path.join(__dirname, 'public')
+    source: path.join(__dirname, 'source'),
+    build: path.join(__dirname, 'build')
 };
 
-const common = merge([{
-		entry: PATHS.frontend + '/js/index.js',
-		output: {
-			path: PATHS.public,
-			filename: "[name].js"
-		},
-		plugins: [
-			new HtmlWebpackPlugin({
-				template: PATHS.frontend + '/pug/index.pug',
-			})
-		],
-		resolve: {
-			modules: ["node_modules"],
-			extensions: ["*", ".js"]
-		},
-		resolveLoader: {
-			modules: ["node_modules"],
-			moduleExtensions: ['-loader'],
-			extensions: ["*", ".js"]
-		},
-	},
-	pug()
+const common = merge([
+    {
+        entry: {
+            'index': PATHS.source + '/pages/index/index.js',
+        },
+        output: {
+            path: PATHS.build,
+            filename: 'js/[name].js'
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                chunks: ['index', 'common'],
+                template: PATHS.source + '/pages/index/index.pug'
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'common'
+            }),
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery'
+            })
+        ]
+    },
+    pug(),
+    // images()
 ]);
 
-
-module.exports = function (env) {
-	if(env === 'production'){
-		return common;
-	}
-	if(env === 'development'){
-		return merge([
-			common,
-			devserver(),
-			sass(),
-			css(),
-		])
-	}
+module.exports = function(env) {
+    if (env === 'production'){
+        return merge([
+            common,
+            extractCSS(),
+            // uglifyJS()
+        ]);
+    }
+    if (env === 'development'){
+        return merge([
+            common,
+            devserver(),
+            sass(),
+            css()
+        ])
+    }
 };
+
+
+
+
+
+
+
+
+
+
