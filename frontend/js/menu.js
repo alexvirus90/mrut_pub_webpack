@@ -1,4 +1,5 @@
 import '../sass/menu.sass';
+import 'normalize.css';
 
 export default function (array, className) {
 	let menu = document.createElement('ul');
