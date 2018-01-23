@@ -17,7 +17,7 @@ module.exports = {
 
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Webpack APP'
+			template: PATHS.frontend + '/pug/index.pug',
 		})
 	],
 
@@ -33,17 +33,27 @@ module.exports = {
 	},
 
 	module: {
-		rules: [{
-				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env'],
-						plugins: ['@babel/transform-runtime']
-					}
+		rules: [
+		{
+			test: /\.js$/,
+			exclude: /(node_modules|bower_components)/,
+			use: {
+				loader: 'babel-loader',
+				options: {
+					presets: ['@babel/preset-env'],
+					plugins: ['@babel/transform-runtime']
 				}
 			}
-		]
+		},
+		{
+			test: /\.pug$/,
+			use: {
+				loader: 'pug-loader',
+				options: {
+					pretty: true,
+				}
+			}
+		}],
+
 	}
 };
