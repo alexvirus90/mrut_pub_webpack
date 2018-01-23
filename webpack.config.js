@@ -8,7 +8,7 @@ const PATHS = {
 	public: 	path.join(__dirname, 'public')
 };
 
-module.exports = {
+const common = {
 	entry: PATHS.frontend + '/js/index.js',
 	output: {
 		path: PATHS.public,
@@ -54,6 +54,26 @@ module.exports = {
 				}
 			}
 		}],
+	},
 
+};
+
+const developmentConfig = {
+	devServer: {
+		stats: 'errors-only',
+		port: 9000
+	}
+};
+
+module.exports = function (env) {
+	if(env === 'production'){
+		return common;
+	}
+	if(env === 'development'){
+		return Object.assign(
+			{},
+			common,
+			developmentConfig
+		)
 	}
 };
