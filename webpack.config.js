@@ -9,7 +9,7 @@ const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css.extract');
-// const uglifyJS = require('./webpack/js.uglify');
+const uglifyJS = require('./webpack/js.uglify');
 // const images = require('./webpack/images');
 
 const PATHS = {
@@ -50,7 +50,7 @@ module.exports = function(env) {
         return merge([
             common,
             extractCSS(),
-            // uglifyJS()
+            uglifyJS()
         ]);
     }
     if (env === 'development'){
