@@ -1,0 +1,39 @@
+@import "variables"
+
+@mixin placeholder
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+@mixin hover-state
+  &:hover, &:active, &:focus
+    @content
+
+@mixin media-breakpoint-up($resolution-min)
+  @media only screen and (max-width: $resolution-min)
+    @content
+
+@mixin media-breakpoint-between($resolution-min, $resolution-max)
+  @media only screen and (min-width: $resolution-min + 1) and (max-width: $resolution-max - 1)
+    @content
+
+@mixin media-breakpoint-down($resolution-max)
+  @media only screen and (min-width: $resolution-max)
+    @content
+
+@mixin scrollbars($size, $primary, $secondary: lighten($primary, 25%))
+  ::-webkit-scrollbar
+    width:  $size
+    height: $size
+
+  ::-webkit-scrollbar-thumb
+    background: $primary
+
+  ::-webkit-scrollbar-track
+    background: $secondary
+

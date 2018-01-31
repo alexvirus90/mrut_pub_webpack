@@ -1,0 +1,64 @@
+@import "~bootstrap-v4-dev/scss/bootstrap-grid.scss"
+$fa-font-path: "~font-awesome/fonts"
+@import '~font-awesome/scss/font-awesome.scss'
+@import "../../components/sass/variables"
+@import "../../components/sass/mixin"
+@import "../../components/sass/libs"
+
+.leaflet-control-attribution
+  display: none
+iframe
+  border: none
+h1
+  display: none
+p
+  font-family: Verdana, "DejaVu Sans", sans-serif
+  font-size: 11px
+  font-weight: 400
+  font-stretch: $value
+  font-style: normal
+  font-variant-caps: normal
+  font-variant-ligatures: normal
+  font-variant-numeric: normal
+  letter-spacing: -0.33px
+  text-size-adjust: $value
+  color: #4A5C6A
+html, body, #map_canvas
+  height: $value
+  width: $value
+body
+  padding: 0
+  margin: 0
+html
+  overflow:  hidden
+main
+  height: $value
+section
+  height: $value
+.col-middle
+  .context
+    #search
+      outline: 0 none
+      height: 49px
+.form-check
+  text-align: left
+  label
+    font-size: $size + 6px
+    .radio
+      margin-right: $size
+      transform: scale(1.6)
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid #ccc
+  margin: 5px 0
+  padding: 0
+
+//@import "../../components/sass/popupPanel"
+//@import "../../components/sass/legend"
+//@import "../../components/sass/aside"
+//@import "../../components/sass/modal"
+@import "./sass/header"
+
+

@@ -3,11 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Index page
-    </title>
-  <link href="./css/index.css" rel="stylesheet"></head>
+    <title>Уборочная техника</title>
+  <link href="./css/common.css" rel="stylesheet"><link href="./css/media.css" rel="stylesheet"><link href="./css/header.css" rel="stylesheet"></head>
   <body>
-    <h1>Традиционная проверка</h1>
-    <!--img(src=require("./webpack.svg") width="100")-->
-  <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/index.js"></script></body>
+<nav class="navbar navbar-expand{-sm|-md|-lg|-xl} navbar-light bg-light">
+  <div class="container header">
+    <div class="row">
+      <div class="col-2 col-left"><a class="navbar-brand" href="#" data-toggle="modal" data-target="#searchModal">
+          <figure><img class="d-inline-block" src="images/icon_logo.png" alt=""></figure>
+          <p>Комитет по благоустройству<br /> уборочная техника<br />г. Санкт-Петербург</p></a></div>
+      <div class="col col-middle">
+        <div class="context">
+          <form class="form-inline search" id="search" action="search"><i class="fa fa-search"></i>
+            <div class="search-input" id="search_clear"></div><a class="button-state"><span class="fa fa-exchange fa-lg"></span></a>
+          </form>
+        </div>
+      </div>
+      <div class="col-2 col-right"><i class="fa fa-bars"></i></div>
+    </div>
+  </div>
+</nav>
+<!--img(src=require("./webpack.svg") width="100")-->
+  <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/media.js"></script><script type="text/javascript" src="js/header.js"></script></body>
 </html>

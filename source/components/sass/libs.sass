@@ -1,0 +1,84 @@
+.row
+  margin: 0
+.navbar
+  background-color: #E6EBF0
+  padding: 0
+  z-index: 1400
+  &-brand
+    margin: 0
+    padding: 0
+.input-group
+  .form-control
+    width: 91%
+  .form-control, .input-group-btn button
+    -webkit-border-radius: 0
+    -moz-border-radius: 0
+    border-radius: 0
+.nav-tabs
+  .nav-link
+    border-top-right-radius: 0
+    border-top-left-radius: 0
+#search_clear
+  a
+    margin: 5px 0
+    z-index: 2000
+//.leaflet-control-layers-toggle
+//  background-image: url(../images/layers.png)
+//.leaflet-retina .leaflet-control-layers-toggle
+//  background-image: url(../images/layers-2x.png)
+//.leaflet-default-icon-path
+  background-image: url(../images/marker-icon.png)
+.leaflet-popup-content
+  p
+    font-size: 1em
+.leaflet-container
+  .leaflet-top
+    .leaflet-control-zoom, .leaflet-control-layer, .leaflet-control-locate
+      margin-top: 10px
+      border: 0
+    .leaflet-bar
+      box-shadow: none
+      .fullscreen-icon
+        //background: #fff url(../images/fullscreen@1.2x.png) no-repeat 0 0
+        background-position: 2px 2px
+      a
+        width: 40px
+        height: 40px
+        line-height: 36px
+        border-radius: 100%
+        border: 2px solid rgba(0, 0, 0, .2)
+        background-clip: padding-box
+        padding-top: 1px
+        &:focus
+          border-radius: 100%
+  &.fullscreen-icon-on
+    .fullscreen-icon
+      background-position: 2px -30px !important
+.col-middle
+  ul
+    left: 0 !important
+    width: 100% !important
+.ui-autocomplete
+  max-height: 320px
+  overflow-y: auto
+  overflow-x: hidden
+.feedEkList
+  padding: 4px 10px
+  .itemTitle
+    a
+      color: #466ba1 !important
+  .itemContent
+    p
+      font-size: 14px
+.ui-widget-header
+  margin: 0 !important
+  border: 0
+.ui
+  &.dimmer
+    background-color: rgba(0,0,0,.5)
+  &-menu
+    &-item-wrapper
+      padding: 8px 1em 8px .4em!important
+      font-weight: bold
+      font-size: 1em
+      color: grey

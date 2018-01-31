@@ -1,0 +1,39 @@
+.modal
+  overflow-y: hidden!important
+  &.show
+    .modal-dialog
+      max-width: 800px
+      margin: 100px auto
+      .modal-content
+        border: 0
+        .modal-body
+          overflow: hidden
+          padding: 15px 0
+          .nav
+            position: fixed
+            top: 52px
+            width: 100%
+            text-align: center
+            padding: 0 15px
+          @include scrollbars(.7em, grey)
+          .tab-content
+            overflow-y: auto
+            margin-top: 30px
+            height: 375px
+            padding: 0 15px
+            .col_1
+              text-align: right
+            .col_2
+              padding: 0
+            p
+              font-size: 16px
+              line-height: 2em
+              a
+                color: #4a5c6a
+.nav-pills
+  .nav-link
+    &.active
+      color: #4183c4
+      background-color: #fff
+      border-bottom: 4px solid #0275d8
+      border-radius: 0

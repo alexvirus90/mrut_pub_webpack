@@ -1,0 +1,22 @@
+nav(class="navbar navbar-expand{-sm|-md|-lg|-xl} navbar-light bg-light")
+  div(class="container header")
+    div(class="row")
+      div(class="col-2 col-left")
+        a(class="navbar-brand" href="#" data-toggle="modal" data-target="#searchModal")
+          figure
+            img(src=require('./images/icon_logo.png') class="d-inline-block" alt="")
+          p
+            | Комитет по благоустройству<br /> уборочная техника<br />г. Санкт-Петербург
+      div(class="col col-middle")
+        div(class="context")
+          form(id="search" class="form-inline search" action="search")
+            i(class="fa fa-search")
+            div(id="search_clear" class="search-input")
+            a(class="button-state")
+              span(class="fa fa-exchange fa-lg")
+      div(class="col-2 col-right")
+        i(class="fa fa-bars")
+
+
+
+//img(src=require("./webpack.svg") width="100")
