@@ -1,11 +1,26 @@
-import 'tether';
+'use strict';
+
 import 'bootstrap-v4-dev';
 import './header.sass';
-import 'normalize.css';
-// import createMenu from '../../components/menu/menu';
-// let menu = createMenu(['Main', 'Blog'], 'menu');
-// document.body.appendChild(menu);
-// console.log('in index.js');
-// console.log($);
-// console.log(jQuery);
+import '../../components/aside/aside';
+import '../../components/function/news';
+import nsScrl from '../../components/function/scroll.js';
+
+$('.col-right').click(() => {
+	nsScrl();
+	if ($(".aside").hasClass("in")) {
+		$('.aside').asidebar('close')
+	} else {
+		$('.aside').asidebar('open')
+	}
+});
+
+$('#news').FeedEk({
+	FeedUrl:'http://gov.spb.ru/gov/otrasl/blago/news/rss/',
+	MaxCount: 10,
+	ShowDesc: true,
+	ShowPubDate: true,
+	DescCharacterLimit: 100
+});
+
 

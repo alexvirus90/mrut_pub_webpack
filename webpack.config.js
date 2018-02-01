@@ -23,7 +23,7 @@ const common = merge([
 		context: PATHS.source,
 		entry: {
 			header: './pages/header/header.js',
-			media: './pages/media/media.js',
+			media: './components/media/media.js',
 		},
 		output: {
 			path: PATHS.build,
@@ -34,17 +34,33 @@ const common = merge([
 			new webpack.NoEmitOnErrorsPlugin(),
 			new HtmlWebpackPlugin({
 				filename: 'index.html',
-				chunks: ['header', 'common', 'media'],
+				chunks: [ 'manifest', 'common', 'header', 'media', ],
+				chunksSortMode: function (chunk1, chunk2) {
+					var orders = [ 'manifest', 'common', 'header', 'media',];
+					var order1 = orders.indexOf(chunk1.names[0]);
+					var order2 = orders.indexOf(chunk2.names[0]);
+					if (order1 > order2) {
+						return 1;
+					} else if (order1 < order2) {
+						return -1;
+					} else {
+						return 0;
+					}
+				},
 				template: './pages/base.pug',
 			}),
 			new webpack.optimize.CommonsChunkPlugin({
-				name: 'common'
+				name: 'common',
+			}),
+			new webpack.optimize.CommonsChunkPlugin({
+				name: "manifest",
+				minChunks: Infinity
 			}),
 			new webpack.ProvidePlugin({
 				$: 'jquery',
 				jQuery: 'jquery',
 				"window.Tether": 'tether',
-				"Tether": 'tether'
+				"Tether": 'tether',
 			})
 		],
 		resolve: {

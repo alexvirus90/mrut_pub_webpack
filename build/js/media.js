@@ -1,27 +1,23 @@
 var media =
-webpackJsonp_name_([0],{
+webpackJsonp_name_([2],{
 
-/***/ 4:
+/***/ 6:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 6:
+/***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(2);
-
-__webpack_require__(0);
-
-__webpack_require__(4);
-
 __webpack_require__(1);
+
+__webpack_require__(6);
 
 /***/ })
 
-},[6]);
+},[8]);

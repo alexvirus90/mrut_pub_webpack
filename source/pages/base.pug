@@ -6,4 +6,8 @@ html
     title
       | Уборочная техника
   body
+    include ../components/modal/modal
     include ./header/header
+    div(data-role="content" style="padding:0;")
+      include ./map/map
+      include ../components/aside/aside

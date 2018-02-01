@@ -9,7 +9,7 @@ module.exports = function () {
 					options: {
 						presets: ['@babel/preset-env'],
 						plugins: ['@babel/transform-runtime']
-					}
+					},
 				}
 			}],
 		},
