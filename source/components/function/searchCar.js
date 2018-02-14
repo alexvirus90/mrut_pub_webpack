@@ -1,5 +1,6 @@
 import 'jquery-ui/ui/widgets/autocomplete';
 import {data} from './waitforpool';
+import {carsArray} from './info';
 import {map} from './drawMap';
 
 export default function srchCar() {

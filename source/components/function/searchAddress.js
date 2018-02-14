@@ -1,7 +1,6 @@
 import 'jquery-ui/ui/widgets/autocomplete';
 import {map} from './drawMap';
 
-
 let mrkSearch;
 
 export default function srchAddr() {

@@ -1,4 +1,4 @@
-import './MovingMarker';
+import '../libs/MovingMarker';
 import getDurat from './duration';
 import getFuncCar from './funcar';
 import getIcon from './icon';

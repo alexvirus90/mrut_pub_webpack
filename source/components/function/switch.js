@@ -1,5 +1,9 @@
+import srchAddr from './searchAddress.js';
+import srchCar from './searchCar.js';
+
 export default function switdh() {
 	$(() => {
+		srchAddr();
 		let el = $('#search_query');
 		$('.button-state').click(() => {
 			if(el.hasClass('address')){
@@ -10,10 +14,12 @@ export default function switdh() {
 				} else {
 					el.attr('placeholder', 'Поиск по бортовому номеру');
 				}
+				srchCar();
 			} else {
 				el.removeClass('object');
 				el.addClass('address');
 				el.attr('placeholder', 'Поиск по адресу');
+				srchAddr();
 			}
 		});
 		$('form').submit(function () {

@@ -2,11 +2,9 @@
 
 import 'bootstrap-v4-dev';
 import './header.sass';
-import '../../components/function/aside';
+import '../../components/libs/aside';
 import '../../components/function/news';
 import setAttr from '../../components/function/add.js';
-import srchAddr from '../../components/function/searchAddress.js';
-import srchCar from '../../components/function/searchCar.js';
 import switdh from '../../components/function/switch.js'
 import clear from '../../components/function/clear.js'
 import nsScrl from '../../components/function/scroll.js';
@@ -16,8 +14,6 @@ $('#search_clear').append(input);
 $('#search').append("<a href='#' class='closed'><i class='fa fa-times'></i></a>");
 setAttr(input, {"type": "text", "id": "search_query", "class": "address clearable", "placeholder": "Поиск по адресу"});
 
-srchAddr();
-srchCar();
 switdh();
 clear();
 
