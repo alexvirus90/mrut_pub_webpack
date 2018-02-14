@@ -22,35 +22,36 @@
   a
     margin: 5px 0
     z-index: 2000
-//.leaflet-control-layers-toggle
-//  background-image: url(../images/layers.png)
-//.leaflet-retina .leaflet-control-layers-toggle
-//  background-image: url(../images/layers-2x.png)
-//.leaflet-default-icon-path
-  background-image: url(../images/marker-icon.png)
+.leaflet-control-layers-toggle
+  background-image: url(../../pages/images/layers.png)
+.leaflet-retina .leaflet-control-layers-toggle
+  background-image: url(../../pages/images/layers-2x.png)
+.leaflet-default-icon-path
+  background-image: url(../../pages/images/marker-icon.png)
 .leaflet-popup-content
   p
     font-size: 1em
-.leaflet-container
-  .leaflet-top
-    .leaflet-control-zoom, .leaflet-control-layer, .leaflet-control-locate
-      margin-top: 10px
-      border: 0
-    .leaflet-bar
-      box-shadow: none
-      .fullscreen-icon
-        //background: #fff url(../images/fullscreen@1.2x.png) no-repeat 0 0
-        background-position: 2px 2px
-      a
-        width: 40px
-        height: 40px
-        line-height: 36px
-        border-radius: 100%
-        border: 2px solid rgba(0, 0, 0, .2)
-        background-clip: padding-box
-        padding-top: 1px
-        &:focus
+body
+  .leaflet-container
+    .leaflet-top
+      .leaflet-control-zoom, .leaflet-control-layer, .leaflet-control-locate
+        margin-top: 10px
+        border: 0
+      .leaflet-bar
+        box-shadow: none
+        .fullscreen-icon
+          background: #fff url(../../pages/images/fullscreen@1.2x.png) no-repeat 0 0
+          background-position: 2px 2px
+        a
+          width: 40px
+          height: 40px
+          line-height: 36px
           border-radius: 100%
+          border: 2px solid rgba(0, 0, 0, .2)
+          background-clip: padding-box
+          padding-top: 1px
+          &:focus
+            border-radius: 100%
   &.fullscreen-icon-on
     .fullscreen-icon
       background-position: 2px -30px !important

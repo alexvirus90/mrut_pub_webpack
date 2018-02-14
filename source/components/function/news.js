@@ -26,6 +26,7 @@
 					data.query.results.rss = [data.query.results.rss];
 				}
 				$.each(data.query.results.rss, function (e, itm) {
+
 					s += '<li><div class="itemTitle"><a href="' + itm.channel.item.link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></div>';
 
 					if (def.ShowPubDate){

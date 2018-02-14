@@ -28,11 +28,19 @@
 
 @mixin scrollbars($size, $primary, $secondary: lighten($primary, 25%))
   ::-webkit-scrollbar
-    width:  $size
+    width:  .6em
     height: $size
 
   ::-webkit-scrollbar-thumb
     background: $primary
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    -webkit-transition: color .2s ease
+    -moz-transition: color .2s ease
+    -ms-transition: color .2s ease
+    -o-transition: color .2s ease
+    transition: color .2s ease
 
   ::-webkit-scrollbar-track
     background: $secondary
